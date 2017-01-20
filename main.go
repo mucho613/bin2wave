@@ -61,7 +61,7 @@ func main() {
 	copy(headerChunk[34:36], uintToByteArray(bitDepth))                        // ビット深度
 	copy(headerChunk[36:40], []byte("data"))                                   // data チャンク識別子
 	copy(headerChunk[40:44], uintToByteArray(length))                          // data チャンクのサイズ(識別子除く)
-	//outputFile.Write(headerChunk)
+	outputFile.Write(headerChunk)
 	io.Copy(outputFile, inputFile)
 }
 func uintToByteArray(x uint64) (buf []byte) {
