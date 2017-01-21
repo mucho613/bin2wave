@@ -23,7 +23,7 @@ func main() {
 
 	flag.Parse()
 
-	if flag.NFlag() == 0 {
+	if inputFilePath == "" {
 		flag.Usage()
 		flag.PrintDefaults()
 	}
