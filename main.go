@@ -24,8 +24,8 @@ func main() {
 	flag.Parse()
 
 	if inputFilePath == "" {
-		flag.Usage()
 		flag.PrintDefaults()
+		os.Exit(0)
 	}
 
 	inputFile, err := os.Open(inputFilePath)
