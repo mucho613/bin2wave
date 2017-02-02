@@ -32,6 +32,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	defer inputFile.Close()
 
 	fileinfo, err := inputFile.Stat()
 	if err != nil {
@@ -43,8 +44,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-	defer inputFile.Close()
 	defer outputFile.Close()
 
 	headerChunk := make([]byte, 44)
